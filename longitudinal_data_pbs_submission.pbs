@@ -1,0 +1,15 @@
+#!/bin/bash
+#PBS -q q1
+#PBS -l walltime=20:00:00
+#PBS -l select=1:ncpus=6:mem=64G
+#PBS -P 11000482
+#PBS -N UKB_follow-up_job_leadership
+#PBS -e /home/users/nus/e1124232/scratch/
+#PBS -o /home/users/nus/e1124232/scratch/
+
+cd $PBS_O_WORKDIR
+module load python/3.10.9
+python -m pip install pandas 
+python -m pip install numpy
+
+python long_data_final_version.py
